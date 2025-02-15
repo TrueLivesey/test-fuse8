@@ -1,0 +1,128 @@
+@use '../mixins/responsive-text' as responsive;
+@use '../mixins/breakpoint' as breakpoints;
+
+.character-item {
+  grid-column: span 4;
+  list-style: none;
+
+  &__link {
+    display: block;
+    height: 100%;
+    min-height: 150px;
+    padding: 20px 30px;
+    box-shadow: var(--character-item-shadow);
+    transition:
+      box-shadow var(--main-transition),
+      background-color var(--main-transition);
+
+    @media (hover: hover) {
+      &:focus-visible {
+        outline: none;
+        box-shadow: var(--shadow-hover);
+        border-color: var(--color-toolbox);
+        background-color: var(--color-toolbox-lighter);
+      }
+
+      &:hover {
+        box-shadow: var(--character-item-shadow-hover);
+        background-color: var(--color-toolbox-lighter);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+    height: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 4px;
+  }
+
+  &__title {
+    color: var(--color-title);
+    font-weight: 400;
+    line-height: 120%;
+    @include responsive.responsive-text(16, 25, 375, 1920);
+  }
+
+  &__status,
+  &__created {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 214%;
+    color: var(--color-gray);
+  }
+
+  &__status {
+    &--green {
+      font-weight: 600;
+      color: var(--color-green);
+    }
+
+    &--red {
+      font-weight: 600;
+      color: var(--color-red);
+    }
+  }
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    grid-column: span 6;
+
+    .character-item {
+      &__link {
+        min-height: 262px;
+      }
+
+      &__title {
+        @include responsive.responsive-text(20, 30, 375, 1920);
+      }
+    }
+  }
+}
+
+@include breakpoints.tablet {
+  .character-item {
+    &__created,
+    &__status {
+      line-height: 130%;
+    }
+  }
+}
+
+@include breakpoints.small-tablet {
+  .character-item {
+    grid-column: span 6;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      .character-item__link {
+        min-height: 200px;
+      }
+    }
+  }
+}
+
+@include breakpoints.mobile {
+  .character-item {
+    grid-column: span 2;
+    min-height: 120px;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      grid-column: span 2;
+
+      .character-item__link {
+        min-height: 180px;
+      }
+    }
+  }
+}

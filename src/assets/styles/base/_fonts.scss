@@ -1,0 +1,6 @@
+@use '../mixins/font-face' as font;
+
+@include font.font-face('Montserrat', '/montserrat-regular', 400, normal);
+@include font.font-face('Montserrat', '/montserrat-bold', 700, normal);
+@include font.font-face('FiraSans', '/firasans-regular', 400, normal);
+@include font.font-face('FiraSans', '/firasans-bold', 700, normal);

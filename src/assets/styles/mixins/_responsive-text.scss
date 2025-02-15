@@ -1,0 +1,5 @@
+@mixin responsive-text($min-size, $max-size, $min-vw, $max-vw) {
+  $add-size: $max-size - $min-size;
+  $max-vw: $max-vw - 320;
+  font-size: calc(#{$min-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-vw}));
+}

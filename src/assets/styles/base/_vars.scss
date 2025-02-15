@@ -1,0 +1,32 @@
+:root {
+  // Base
+  --font-family-primary: 'FiraSans', serif;
+  --font-family-secondary: 'Montserrat', serif;
+
+  // Colors
+  --color-white: #fff;
+  --color-black: #282626;
+  --color-gray: #767676;
+  --color-toolbox: #656ec2;
+  --color-toolbox-lighter: #b4bbff;
+  --color-toolbox-lighter: #e9ebff;
+  --color-green: #267504;
+  --color-red: #820a0a;
+
+  // Colors for elements
+  --color-title: var(--color-black);
+  --color-text: var(--color-gray);
+
+  // Transitions
+  --main-transition: 0.15s ease-in-out;
+
+  // Shadows
+  --shadow: 0 7px 12px 0 rgba(100, 100, 111, 0.2);
+  --shadow-hover: 0 7px 12px 0 rgba(107, 107, 202, 0.2);
+  --character-item-shadow: 0 7px 25px 0 rgba(100, 100, 111, 0.2);
+  --character-item-shadow-hover: 0 7px 25px 0 rgba(107, 107, 202, 0.2);
+
+  // Focus-visible, hover, active
+  --outline: 2px solid var(--color-toolbox);
+  --outline-offset: 2px;
+}

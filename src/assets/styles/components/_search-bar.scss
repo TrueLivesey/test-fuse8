@@ -1,0 +1,62 @@
+@use '../mixins/breakpoint' as breakpoint;
+@use '../mixins/responsive-text' as responsive;
+
+.search-bar {
+  max-width: 626px;
+  margin-bottom: 68px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__input {
+    width: 100%;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    // font-size: 22px;
+    text-align: left;
+    color: var(--color-toolbox);
+    border: 1px solid white;
+    box-shadow: var(--shadow);
+    transition:
+      border-color var(--main-transition),
+      box-shadow var(--main-transition);
+    @include responsive.responsive-text(18, 22, 375, 1920);
+
+    &::placeholder {
+      color: var(--color-toolbox);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-toolbox);
+      box-shadow: var(--shadow-hover);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--color-toolbox);
+        box-shadow: var(--shadow-hover);
+      }
+    }
+  }
+
+  &__total-count {
+    padding-left: 40px;
+    font-family: var(--font-family-secondary);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-black);
+  }
+}
+
+@include breakpoint.small-tablet {
+  .search-bar {
+    margin-bottom: 64px;
+  }
+}
+
+@include breakpoint.mobile {
+  .search-bar {
+    margin-bottom: 32px;
+  }
+}

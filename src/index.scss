@@ -1,0 +1,16 @@
+@use 'assets/styles/resets/*';
+@use 'assets/styles/base/fonts';
+@use 'assets/styles/base/vars';
+@use 'assets/styles/base/global';
+@use 'assets/styles/components/*';
+
+:root {
+  font-family: 'FiraSans', sans-serif;
+  line-height: 100%;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,82 @@
+@use '../mixins/breakpoint' as breakpoint;
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+*,
+*::before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  line-height: normal;
+  color: var(--text-color);
+  background-color: #fff;
+  scrollbar-gutter: stable;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 128px;
+  padding-bottom: 20px;
+}
+
+.container {
+  max-width: 1596px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@include breakpoint.tablet {
+  .app {
+    padding-top: 68px;
+  }
+}
+
+@include breakpoint.small-tablet {
+  .app {
+    padding-top: 64px;
+  }
+}
+
+@include breakpoint.mobile {
+  .app {
+    padding-top: 32px;
+  }
+}

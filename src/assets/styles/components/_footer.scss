@@ -1,0 +1,14 @@
+.footer {
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    color: var(--color-black);
+  }
+
+  &__link {
+    color: var(--color-toolbox);
+  }
+}
