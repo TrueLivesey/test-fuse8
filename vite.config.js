@@ -11,6 +11,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
   },
+  base: '/test-fuse8/',
   plugins: [react(), sassGlobImports()],
   css: {
     postcss: {
