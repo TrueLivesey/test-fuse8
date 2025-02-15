@@ -21,6 +21,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src/assets'),
+      find: '../font',
+      replacement: path.resolve(__dirname, 'src/assets/fonts'),
     },
   },
   build: {
@@ -35,6 +37,9 @@ export default defineConfig({
         assetFileNames: (name) => {
           if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
             return 'assets/images/[name]-[hash][extname]';
+          }
+          if (/\.(woff2|woff|ttf)$/.test(name ?? '')) {
+            return 'assets/fonts/[name].[hash][extname]';
           }
           return 'assets/[name].[hash][extname]';
         },
