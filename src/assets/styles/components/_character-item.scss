@@ -20,13 +20,18 @@
         outline: none;
         box-shadow: var(--shadow-hover);
         border-color: var(--color-toolbox);
-        background-color: var(--color-toolbox-lighter);
+        background-color: var(--color-toolbox-lighter-2);
       }
 
       &:hover {
         box-shadow: var(--character-item-shadow-hover);
-        background-color: var(--color-toolbox-lighter);
+        background-color: var(--color-toolbox-lighter-2);
       }
+    }
+
+    &:active {
+      box-shadow: var(--character-item-shadow);
+      background-color: var(--color-toolbox-darker);
     }
   }
 
